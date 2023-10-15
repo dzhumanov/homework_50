@@ -5,15 +5,143 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="style/style-2.css">
 </head>
 
 <body>
     <div id="app"></div>
 
     <script type="text/babel">
+
+        const ComponentLi = ({content}) => {
+            return (
+                <li>
+                    <a href="#">{content}</a>   
+                </li>
+            )
+        };
+
+        const ComponentCard = ({icon, title, content}) => {
+            return (
+                <div className="card">
+                    <i className={icon}></i>
+                    <h5>{title}</h5>
+                    <p>{content}</p>
+                    <a href="#">Read more</a>    
+                </div>
+            )
+        };
+
+        const ComponentProcessInfo = ({title, content}) => {
+            return( 
+                <div className="pr-item">
+                    <h6>{title}</h6>
+                    <p>{content}</p>
+                </div>
+            )
+        };
+
+        const ComponentLinkSoc = ({icon}) => {
+            return(
+                <a href="#" className="footer-link">
+                    <i class={icon}></i>
+                </a>
+            )
+        };
+
+        const header = (
+            <div className="header">
+                <div className="container">
+                   <a href="#">
+                        <img src="file:///C:/Users/user/Desktop/homeworks/3month/homework_21/images/logo.svg" alt=""/>
+                    </a>
+                    <nav className="navigation">
+                        <ul>
+                            <ComponentLi content="Home"/>
+                            <ComponentLi content="Properties"/>
+                            <ComponentLi content="About"/>
+                            <ComponentLi content="Contact"/>
+                        </ul>    
+                    </nav>
+                    <div className="header-links">
+                        <a href="#" className="cart">Cart</a>
+                        <button type="button" className="header-btn">Explore property</button>
+                    </div>    
+                </div>    
+            </div>
+        )
+
+        const info = (
+            <div className="info">
+                <div className="container">
+                    <h3>How it Works</h3>
+                    <p>Nunc laoreet consequat nunc at consequat. Praesent aliquam mi id efficitur pellentesque. Maecenas varius felis felis.</p>
+                    <div className="info-wrapper">
+                        <ComponentCard icon="fa-solid fa-house" title="Find property"
+                            content="Odales mauris quis tellus facilisis, vel mattis magna interdum. Curabitur eget aliquam elit. In mauris purus, auctor a eleifend non." />
+                        <ComponentCard icon="fa-regular fa-note-sticky" title="Make a deal"
+                            content="Pellentesque suscipit mauris. Nam dictum, erat a volutpat varius, urna nisi sollicitudin orci, sagittis facilisis odio tortor ac mi."/>
+                        <ComponentCard icon="fa-solid fa-key" title="Get your keys"
+                            content="Nulla vel bibendum purus. Etiam tempus quam vel pulvinar rutrum. Duis semper, metus vitae fermentum consequat." />
+                    </div>
+                    </div>    
+            </div>
+        )
+
+        const process = (
+            <div className="process">
+                <div className="container">
+                    <img src="https://media.architecturaldigest.com/photos/5eac5fa22105f13b72dede45/4:3/w_1420,h_1065,c_limit/111LexowAve_Aug18-1074.jpg" alt="bedroom"/>
+                    <div className="process-text-block">
+                        <span>Quick and easy</span>    
+                        <h3>Fast forward process</h3>
+                        <p>Ut vitae nisi eu nisi maximus condimentum ac id purus. Duis sit amet mi arcu praesent nec
+                            felis nisl.</p>
+                        <div className="process-wrapper"> 
+                            <ComponentProcessInfo title="Affordable prices" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros."/>
+                            <ComponentProcessInfo title="Less paper work" content="Curabitur porta luctus semper donec eget lobortis leo ac finibus nisi." />
+                        </div>
+                        <div className="process-links">
+                            <button type="button">Explore properties</button>
+                            <a href="#">Contact agent</a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+        )
+        
+        const footer = (
+            <div className="footer">
+                <div className="container">
+                    <p>© Realco by Minimal Square.</p>
+                    <div className="footer-links">
+                        <ComponentLinkSoc icon="fa-brands fa-facebook"/>
+                        <ComponentLinkSoc icon="fa-brands fa-instagram" />
+                        <ComponentLinkSoc icon="fa-brands fa-twitter" />
+                        <ComponentLinkSoc icon="fa-brands fa-linkedin" />
+
+                    </div>
+                </div>    
+            </div>
+        )
+
+        const container = document.getElementById('app');
+        ReactDOM.createRoot(container).render(
+        <>
+            {header}
+            {info}
+            {process}
+            {footer}
+        </>
+        );
     </script>
 </body>
 
