@@ -4,14 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="style/style-1.css">
 </head>
 <body>
     <div id="app"></div>
 
     <script type="text/babel">
+        const MovieCard = ({name, year, photo}) => {
+            return (
+                <div className="card">
+                    <h1>{name}</h1>
+                    <p>Year: {year}</p>
+                    <img src={photo} alt="name" className="card-img"/>
+                </div>
+            )
+        }
+
+        const movies = (
+            <div className="app-wrapper">
+                <h1 className="title">My favorite movies!</h1>
+                <div className="card-wrapper">
+                    <MovieCard name="2 Fast 2 Furious" year={2003}
+                        photo="https://uk.imageservice.sky.com/contentid/A5EK4ExFLFLK4oFvdqvcw/LAND_16_9" />
+                    <MovieCard name="Spider-Man: Across the Spider-Verse" year={2023}
+                        photo="https://images.thedirect.com/media/photos/2099.png" />
+                    <MovieCard name="Iron Man" year={2008}
+                        photo="https://img.mensxp.com/media/content/2020/Sep/header-credit-Marvel-Studios_5f741da26f175.jpeg" />
+                </div>
+            </div>
+            
+        )
+
+        const container = document.getElementById('app');
+        ReactDOM.createRoot(container).render(movies);
     </script>
 </body>
 </html>

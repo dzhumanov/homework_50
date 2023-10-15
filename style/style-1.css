@@ -1,0 +1,43 @@
+body {
+    font-family: 'Montserrat',sans-serif;
+    background: #caebb7;
+}
+
+.title {
+    text-align: center;
+}
+
+.card-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.card {
+    -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    color: white;
+    background: #efa994;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 300px;
+    padding: 20px;
+    border: 2px solid white;
+    border-radius: 30px;
+}
+
+.card h1,
+.card p{
+    margin: 0;
+}
+
+.card p {
+    margin-bottom: auto;
+}
+
+.card-img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    margin-top: 10px;
+}
